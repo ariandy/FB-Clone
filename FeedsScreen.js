@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import { Image , View, StyleSheet, ScrollView, ImageBackground } from 'react-native'
-import { Container, Header,    Title,  Content, Input,
+import { Container, Header,    Title,  Content, 
          Footer,    FooterTab, Button, Left,
-         Right,     Body,      Icon,   Text } from 'native-base';
-export default class Profile extends Component {
+         Right,     Body,      Icon,   Text, 
+         Input,     Thumbnail, Card,   CardItem} from 'native-base';
+
+class Status extends Component {
+  render() {
+    return (
+      <View>
+        <Text>{this.props.notes}!</Text>
+      </View>
+    );
+  }
+}
+
+class FeedsScreen extends Component {
+
+  static navigationOptions ={header:null}
+
   render() {
     return (
       <Container>
@@ -41,7 +56,7 @@ export default class Profile extends Component {
             </Button>
           </Body>
           <Body>
-            <Button transparent>
+            <Button transparent onPress={()=>this.props.navigation.navigate("Profile")}>
               <Icon name='user' type='FontAwesome5' style={{color:"blue"}}/>
             </Button>
           </Body>
@@ -59,11 +74,11 @@ export default class Profile extends Component {
 
         <Header style={{height:60, backgroundColor:"white"}}>
           <Body>
-            <ImageBackground source={require('./junji-ito.png')} style={{width:38, height:38, borderRadius:50,}}/>
+            <Thumbnail small source={require('./junji-ito4.jpg')}/>
           </Body>
           <Body>
             <Button bordered rounded style={{width:270}}>
-              <Text>Apa?</Text>
+              <Text>What's on your mind?</Text>
             </Button>
           </Body>
           <Right>
@@ -77,17 +92,113 @@ export default class Profile extends Component {
           <ScrollView horizontal={true}>
             <View style={{flex:1, flexDirection:'row'}}>
               <View style={styles.storyStyle}>
-                <Image source={require('./moses.jpg')} style={styles.storyProfile}/>
+                <ImageBackground 
+                  imageStyle={{borderRadius:20}}
+                  source={require('./moses.jpg')}
+                  style={styles.storyProfile}
+                />
               </View>
-              <View style={styles.storyStyle} />
-              <View style={styles.storyStyle} />
+              <View style={styles.storyStyle}>
+                <ImageBackground 
+                  imageStyle={{borderRadius:20}}
+                  source={require('./angel1.jpg')}
+                  style={styles.storyProfile}
+                />
+              </View>
+              <View style={styles.storyStyle}>
+                <ImageBackground 
+                  imageStyle={{borderRadius:20}}
+                  source={require('./angel2.jpg')}
+                  style={styles.storyProfile}
+                />
+              </View>
+              <View style={styles.storyStyle}>
+                <ImageBackground  imageStyle={{borderRadius:20}}
+                                  source={require('./balpro.jpg')} style={styles.storyProfile}/>
+              </View>
+              <View style={styles.storyStyle}>
+                <ImageBackground  imageStyle={{borderRadius:20}}
+                                  source={require('./angel3.jpg')} style={styles.storyProfile}/>
+              </View>
             </View>
           </ScrollView>
+          <Card style={{flex: 0}}>
+            <CardItem>
+              <Left>
+                <Thumbnail source={require('./plankton.jpg')} />
+                <Body>
+                  <Text>Plankton</Text>
+                  <Text note>22 hours ago</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Image source={require('./gait.jpg')} style={{height: 280, width:360, flex: 1}}/>
+                <Status notes="With my quadrupedal, I'll try to steal the secret recipe of Krabby Patty."/>
+              </Body>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>43 Likes</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>0 Comments</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+
+            </CardItem>
+          </Card>
+          <Card style={{flex: 0}}>
+            <CardItem>
+              <Left>
+                <Thumbnail source={require('./junji-ito4.jpg')} />
+                <Body>
+                  <Text>Ariandy</Text>
+                  <Text note>2 days ago</Text>
+                </Body>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Image source={require('./graph.jpg')} style={{height: 280, width:360, flex: 1}}/>
+                <Status notes="I making a graph as Data Scientist at Krusty Krab"/>
+              </Body>
+            </CardItem>
+            <CardItem>
+              <Left>
+                <Button transparent>
+                  <Icon active name="thumbs-up" />
+                  <Text>43 Likes</Text>
+                </Button>
+              </Left>
+              <Body>
+                <Button transparent>
+                  <Icon active name="chatbubbles" />
+                  <Text>0 Comments</Text>
+                </Button>
+              </Body>
+              <Right>
+                <Text>11h ago</Text>
+              </Right>
+
+            </CardItem>
+          </Card>
         </Content>
       </Container>
     );
   }
 }
+
+export default FeedsScreen
 
 const styles = StyleSheet.create({
   storyStyle : {

@@ -5,7 +5,8 @@ import { Container, Header, Title,     Content,
          Footer,    Form,   View,      Item,
          Label,     Input,  FooterTab, Button,
          Left,      Right,  Body,      Icon,    Text } from 'native-base';
-export default class Login extends Component {
+
+class LoginScreen extends Component {
 
   constructor () {
     super()
@@ -15,7 +16,7 @@ export default class Login extends Component {
       inputPass: 'Password',
       forgotten: 'Forgot Password?',
       orDash: 'OR',
-      buttonSignup: 'Sign Up'
+      buttonSignup: 'Sign Up',
     }
   }
 
@@ -67,7 +68,7 @@ export default class Login extends Component {
                   <Input placeholder={this.state.inputPass} secureTextEntry={true} style={{borderBottomWidth:1,}} />
                 </Item>
                 
-                <Button block style={{ alignContent:"center", marginTop:10 }}
+                <Button block style={{alignContent:"center", marginTop:10 }}
                         onPress={()=>this.props.navigation.navigate("Feeds")}>
                   <Text >{this.state.buttonLogin}</Text>
                 </Button>
@@ -99,3 +100,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default LoginScreen
