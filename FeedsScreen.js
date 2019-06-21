@@ -4,16 +4,7 @@ import { Container, Header,    Title,  Content,
          Footer,    FooterTab, Button, Left,
          Right,     Body,      Icon,   Text, 
          Input,     Thumbnail, Card,   CardItem} from 'native-base';
-
-class Status extends Component {
-  render() {
-    return (
-      <View>
-        <Text>{this.props.notes}!</Text>
-      </View>
-    );
-  }
-}
+import Status from './components/Status.js'
 
 class FeedsScreen extends Component {
 
@@ -29,7 +20,11 @@ class FeedsScreen extends Component {
             </Button>
           </Left>
           <Body>
-            <Input placeholder="Search" placeholderTextColor="white" style={{color:"white"}}/>
+            <Input
+              placeholder="Search"
+              placeholderTextColor="white"
+              style={{color:"white"}}
+            />
           </Body>
 
           <Right>
@@ -74,7 +69,7 @@ class FeedsScreen extends Component {
 
         <Header style={{height:60, backgroundColor:"white"}}>
           <Body>
-            <Thumbnail small source={require('./junji-ito4.jpg')}/>
+            <Thumbnail small source={require('./assets/junji-ito4.jpg')}/>
           </Body>
           <Body>
             <Button bordered rounded style={{width:270}}>
@@ -94,38 +89,44 @@ class FeedsScreen extends Component {
               <View style={styles.storyStyle}>
                 <ImageBackground 
                   imageStyle={{borderRadius:20}}
-                  source={require('./moses.jpg')}
+                  source={require('./assets/moses.jpg')}
                   style={styles.storyProfile}
                 />
               </View>
               <View style={styles.storyStyle}>
                 <ImageBackground 
                   imageStyle={{borderRadius:20}}
-                  source={require('./angel1.jpg')}
+                  source={require('./assets/angel1.jpg')}
                   style={styles.storyProfile}
                 />
               </View>
               <View style={styles.storyStyle}>
                 <ImageBackground 
                   imageStyle={{borderRadius:20}}
-                  source={require('./angel2.jpg')}
+                  source={require('./assets/angel2.jpg')}
                   style={styles.storyProfile}
                 />
               </View>
               <View style={styles.storyStyle}>
-                <ImageBackground  imageStyle={{borderRadius:20}}
-                                  source={require('./balpro.jpg')} style={styles.storyProfile}/>
+                <ImageBackground 
+                  imageStyle={{borderRadius:20}}
+                  source={require('./assets/balpro.jpg')}
+                  style={styles.storyProfile}
+                />
               </View>
               <View style={styles.storyStyle}>
-                <ImageBackground  imageStyle={{borderRadius:20}}
-                                  source={require('./angel3.jpg')} style={styles.storyProfile}/>
+                <ImageBackground 
+                  imageStyle={{borderRadius:20}}
+                  source={require('./assets/angel3.jpg')}
+                  style={styles.storyProfile}
+                />
               </View>
             </View>
           </ScrollView>
           <Card style={{flex: 0}}>
             <CardItem>
               <Left>
-                <Thumbnail source={require('./plankton.jpg')} />
+                <Thumbnail source={require('./assets/plankton.jpg')} />
                 <Body>
                   <Text>Plankton</Text>
                   <Text note>22 hours ago</Text>
@@ -134,7 +135,7 @@ class FeedsScreen extends Component {
             </CardItem>
             <CardItem>
               <Body>
-                <Image source={require('./gait.jpg')} style={{height: 280, width:360, flex: 1}}/>
+                <Image source={require('./assets/gait.jpg')} style={{height: 280, width:360, flex: 1}}/>
                 <Status notes="With my quadrupedal, I'll try to steal the secret recipe of Krabby Patty."/>
               </Body>
             </CardItem>
@@ -160,7 +161,7 @@ class FeedsScreen extends Component {
           <Card style={{flex: 0}}>
             <CardItem>
               <Left>
-                <Thumbnail source={require('./junji-ito4.jpg')} />
+                <Thumbnail source={require('./assets/junji-ito4.jpg')} />
                 <Body>
                   <Text>Ariandy</Text>
                   <Text note>2 days ago</Text>
@@ -169,7 +170,7 @@ class FeedsScreen extends Component {
             </CardItem>
             <CardItem>
               <Body>
-                <Image source={require('./graph.jpg')} style={{height: 280, width:360, flex: 1}}/>
+                <Image source={require('./assets/graph.jpg')} style={{height: 280, width:360, flex: 1}}/>
                 <Status notes="I making a graph as Data Scientist at Krusty Krab"/>
               </Body>
             </CardItem>

@@ -48,7 +48,7 @@ class LoginScreen extends Component {
     return (
       <Container>
         <Content>
-          <Image source={require('./headerLogin.png')} style={{height: 200, width: null, flex: 1}}/>
+          <Image source={require('./assets/headerLogin.png')} style={{height: 200, width: null, flex: 1}}/>
           
           <View style={{alignItems:"center", paddingTop:20}}>
             <View style={{flexDirection:"row"}}>

@@ -63,21 +63,21 @@ class ProfileScreen extends Component {
         </Header>
 
         <Content padder>
-          <Image source={require('./junji-ito3.jpg')} style={{height: 200, width: null,}}/>
-          <Image source={require('./junji-ito4.jpg')} style={{height: 200, width: 200, borderRadius:100, alignSelf:"center", marginTop:-100}}/>  
+          <Image source={require('./assets/junji-ito3.jpg')} style={{height: 200, width: null,}}/>
+          <Image source={require('./assets/junji-ito4.jpg')} style={{height: 200, width: 200, borderRadius:100, alignSelf:"center", marginTop:-100}}/>  
         </Content>
       </Container>
     );
   }
 }
 
-export default FeedsScreen
+export default ProfileScreen
 
 const styles = StyleSheet.create({
   storyStyle : {
     width:130,
     height:230,
-    backgroundColor:"grey",w
+    backgroundColor:"grey",
     borderRadius:20,
     marginTop: 10,
     marginLeft: 10,

@@ -56,4 +56,3 @@ buck-out/
 *.jsbundle
 
 ExperimentalScreen.js
-components/
